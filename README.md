@@ -94,10 +94,10 @@ JSQLite will match exisiting records in your database to json entities by compar
 
 Data  types
 -----
-If the values in the json entities violate data types in database schema, it will not break the system in most cases,
-But in some cases it will UncaughtException, please check the SQLite Type affinity for more details, http://www.sqlite.org/datatype3.html
+If the values in the json entities violate data types in database schema, it will not break the system in most cases.
+However in some cases it will cause UncaughtException, please check the SQLite Type affinity for more details, http://www.sqlite.org/datatype3.html
 
-As a result of Type affinity, JSQLite handle all entities values as a string/text. 
+As a result of Type affinity, JSQLite handle all entities values as string/text interally. 
 
 
 Customization
