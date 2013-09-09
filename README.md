@@ -5,7 +5,7 @@ A tool for Android: Persist JSON string and JSON Objects to your SQLite on Datab
 
 
 Usage
-----
+-----
 
 When you get a response from web services in JSON format, JSQLite can persist data to database with one line of code
   
@@ -16,13 +16,13 @@ Scenario
 import JSQLite  
 <code>import com.wenchao.jsql.JSQLite</code> 
 
-prepare your SQLdatabase  
+Prepare your SQLdatabase  
 ```
     //prepare your SQLdatabase  
     TestDBHelper dbHelper = new TestDBHelper(this);  
     SQLiteDatabase db = dbHelper.getWritableDatabase();  
 ```
-obtain a JSONString or JSONObject
+Obtain a JSONString or JSONObject
 ```
     //obtain a JSONString or JSONObject
     String jsonString = 
@@ -33,13 +33,33 @@ obtain a JSONString or JSONObject
 				      "[{\"line\": 20,\"contact_id\": 15,\"_id\":15}]" +
 		"}";
 ```
-initialize JSQLite Object 
+Initialize JSQLite Object 
 ```
     //initialize JSQLite Object 
     JSQLite jsql = new JSQLite(yourJsonString, yourDB);
 ```
-persist to database
+Persist to database
 ```
     //persist to database
     jsql.persist();
 ```
+Default JSON schema
+-----
+
+The default json schema that can be accepted by JSQLite
+```		
+	//{
+	//	table1:[
+	//			column1:value,
+	//			column2:value,
+	//			column3:value
+	//			],
+	//	table2:[.....],
+	//	table3:[.....],
+	//			......
+	// }
+```
+Default behaviours
+-----
+Customization
+-----
