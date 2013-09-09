@@ -104,12 +104,33 @@ Customization
 -----
 JSQLite also supplied a helper interface (SQLHelper)for you the customize behaviour of JSQLite.
 
-You only need implement 2 methods in the interface.
+For example, if you want to make JSQLite delete all marched records for you.
 
 ```
-public String getSQLClause(String table, String[] marchedKeys, JSONObject row, boolean recordExisting,String pkName) throws JSONException;
+SQLHelper customizedHelper = new SQLHelper(){
+
+		//this method will be iteratively called when JSQLite loop through json entities.
+		//it is your responsibility to return a valid SQL statement for each json entity.
+		@Override
+		public String getSQLClause(String table, String[] matchedKeys,JSONObject record, boolean recordExisting, String pkName) throws JSONException {
+			if(matchedKeys.length == 0){
+				return null;
+			}
+			if(recordExisting){
+				//
+				return "DELETE " + table  + " WHERE " + pkName + "=" + record.get(pkName);
+			}
+		}
+		
+		//this method is only called once before JSQLite loop through json entities
+		//if you have a legacy web services providing incompatible json, you can adapt your legecy json here
+		@Override
+		public JSONObject prepareData(JSONObject data) {
+			return data;
+		}
+	};
+	
+JSQLite(jsonString,db).persist(customizedHelper); // Do not forget to pass the helper to JSQLite
 ```
-
-
 
 
