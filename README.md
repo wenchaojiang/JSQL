@@ -1,7 +1,7 @@
 JSQL
 ====
 
-A tool for Android: Persist JSON string and JSON Objects to your SQLite on Database.
+A json persistent utility for Android:Persist JSON string and JSON Objects to your SQLite on Database.
 
 
 Usage
@@ -117,9 +117,11 @@ SQLHelper customizedHelper = new SQLHelper(){
 				return null;
 			}
 			if(recordExisting){
-				//
+				//return SQL statement
 				return "DELETE " + table  + " WHERE " + pkName + "=" + record.get(pkName);
 			}
+			//if null is returned, JSQLite will skip the entity
+			return null;
 		}
 		
 		//this method is only called once before JSQLite loop through json entities
