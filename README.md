@@ -14,7 +14,10 @@ When you get a response from web services in JSON format, JSQLite can persist da
 Scenario
 -----
 import JSQLite  
-<code>import com.wenchao.jsql.JSQLite</code> 
+```
+    import com.wenchao.jsql.JSQLite
+    import com.wenchao.jsql.SQLHelper
+```
 
 Prepare your SQLdatabase  
 ```
