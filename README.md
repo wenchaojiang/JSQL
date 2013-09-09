@@ -13,13 +13,13 @@ When you get a response from web services in JSON format, JSQLite can persist da
 
 Scenario
 -----
-import JSQLite  
+import JSQLite  into your android project
 ```
     import com.wenchao.jsql.JSQLite
     import com.wenchao.jsql.SQLHelper
 ```
 
-Prepare your SQLdatabase  
+Prepare your SQLite database  
 ```
     //prepare your SQLdatabase  
     TestDBHelper dbHelper = new TestDBHelper(this);  
@@ -39,7 +39,7 @@ Obtain a JSONString or JSONObject
 Initialize JSQLite Object 
 ```
     //initialize JSQLite Object 
-    JSQLite jsql = new JSQLite(yourJsonString, yourDB);
+    JSQLite jsql = new JSQLite(jsonString, db);
 ```
 Persist to database
 ```
