@@ -132,7 +132,10 @@ SQLHelper customizedHelper = new SQLHelper(){
 		}
 	};
 	
-JSQLite(jsonString,db).persist(customizedHelper); // Do not forget to pass the helper to JSQLite
+new JSQLite(jsonString,db).persist(customizedHelper); // Do not forget to pass the helper to JSQLite
 ```
+TODO
+----
+More testing
 
 
