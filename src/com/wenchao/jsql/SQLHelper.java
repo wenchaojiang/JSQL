@@ -1,4 +1,4 @@
-package con.wenchao.jsql;
+package com.wenchao.jsql;
 
 import java.util.Iterator;
 

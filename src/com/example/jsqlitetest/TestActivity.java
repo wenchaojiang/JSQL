@@ -3,7 +3,8 @@ package com.example.jsqlitetest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import con.wenchao.jsql.JSQLite;
+import com.wenchao.jsql.JSQLite;
+
 
 import android.os.Bundle;
 import android.app.Activity;
